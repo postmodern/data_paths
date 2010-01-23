@@ -1,10 +1,12 @@
-require 'static_paths/class_methods'
+require 'static_paths/methods'
 
 require 'set'
 
 module StaticPaths
+  include Methods
+
   def self.included(base)
-    base.extend ClassMethods
+    base.extend Methods
   end
 
   #

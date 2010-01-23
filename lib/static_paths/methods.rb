@@ -1,7 +1,7 @@
 require 'set'
 
 module StaticPaths
-  module ClassMethods
+  module Methods
     #
     # The registered static directories.
     #

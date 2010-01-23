@@ -5,7 +5,7 @@ require 'helpers/static'
 require 'classes/static_class'
 
 describe StaticPaths do
-  include StaticPaths::ClassMethods
+  include StaticPaths
 
   it "should list static directories" do
     Helpers::STATIC_DIRS.each do |dir|
