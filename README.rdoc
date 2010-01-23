@@ -7,8 +7,8 @@
 == DESCRIPTION:
 
 StaticPaths is a library to manage the paths to <tt>static/</tt> directories
-within projects. StaticPaths provides the {StaticPaths.paths},
-{StaticPaths.directory} and {StaticPaths::Helpers}.
+within projects. StaticPaths provides the {StaticPaths.paths} and
+{StaticPaths::Finders}.
 
 == FEATURES/PROBLEMS:
 
@@ -16,7 +16,7 @@ within projects. StaticPaths provides the {StaticPaths.paths},
   <tt>$LOAD_PATH</tt> manages <tt>lib/</tt> directories.
 * Allows projects to register <tt>static/</tt> directories using the
   {static_dir} method.
-* Provides helper methods in {StaticPaths::Helpers} for searching through the
+* Provides helper methods in {StaticPaths::Finders} for searching through the
   register <tt>static/</tt> directories.
 * Does not use global variables.
 
