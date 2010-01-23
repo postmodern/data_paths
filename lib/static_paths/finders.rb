@@ -81,27 +81,6 @@ module StaticPaths
     end
 
     #
-    # Searches for the first set of paths that match the given pattern,
-    # within any static directory.
-    #
-    # @param [String] pattern
-    #   The path glob pattern to search with.
-    #
-    # @return [Array<String>]
-    #   The Array of paths that match the given pattern within a static
-    #   directory.
-    #
-    def static_glob(pattern)
-      each_static_path(pattern) do |full_path|
-        paths = Dir[full_path]
-
-        return paths unless paths.empty?
-      end
-
-      return []
-    end
-
-    #
     # Finds all occurrences of a given path, within all static
     # directories.
     #
