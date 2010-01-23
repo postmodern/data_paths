@@ -63,7 +63,7 @@ multiple RubyGems, in much the same way RubyGems manages <tt>$LOAD_PATH</tt>.
         end
 
         def file_dirs
-          find_static_dirs('files')
+          all_static_dirs('files')
         end
     
       end
