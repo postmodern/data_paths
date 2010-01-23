@@ -182,8 +182,8 @@ module StaticPaths
     def static_glob_all(pattern)
       paths = []
 
-      each_static_path(pattern) do |full_path|
-        paths += Dir[full_path]
+      StaticPaths.paths.each do |path|
+        paths += Dir[File.join(path,pattern)]
       end
 
       return paths
