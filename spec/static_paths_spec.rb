@@ -13,6 +13,12 @@ describe StaticPaths do
     end
   end
 
+  it "should list static directories defined per class/module" do
+    Helpers.static_paths.each do |dir|
+      Helpers::STATIC_DIRS.include?(dir).should == true
+    end
+  end
+
   it "should prevent the addition of non-existant directories" do
     lambda {
       static_dir 'lol'
