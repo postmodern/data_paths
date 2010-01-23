@@ -50,11 +50,11 @@ within projects. StaticPaths provides the {StaticPaths.paths},
       class UsesContent
     
         include StaticPaths::Finders
-
+    
 	def index
 	  find_static_file('index.html')
 	end
-
+    
 	def file_dirs
 	  find_static_dirs('files')
 	end
