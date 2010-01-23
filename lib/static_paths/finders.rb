@@ -2,6 +2,8 @@ require 'static_paths/static_paths'
 
 module StaticPaths
   module Finders
+    include Enumerable
+
     #
     # Passes all existing static paths for the specified path,
     # within the static directories, to the given block.
@@ -36,7 +38,7 @@ module StaticPaths
     #   in any static directory.
     #
     def find_static_path(path)
-      Enumerable::Enumerator.new(self,:each_static_path,path).first
+      Enumerator.new(self,:each_static_path,path).first
     end
 
     #
@@ -89,7 +91,7 @@ module StaticPaths
     #   The occurrences of the given path within all static directories.
     #
     def all_static_paths(path)
-      Enumerable::Enumerator.new(self,:each_static_path,path).to_a
+      Enumerator.new(self,:each_static_path,path).to_a
     end
 
     #
@@ -128,7 +130,7 @@ module StaticPaths
     #   directories.
     #
     def all_static_files(path)
-      Enumerable::Enumerator.new(self,:each_static_file,path).to_a
+      Enumerator.new(self,:each_static_file,path).to_a
     end
 
     #
@@ -166,7 +168,7 @@ module StaticPaths
     #   directories.
     #
     def all_static_dirs(path)
-      Enumerable::Enumerator.new(self,:each_static_dir,path).to_a
+      Enumerator.new(self,:each_static_dir,path).to_a
     end
 
     #
