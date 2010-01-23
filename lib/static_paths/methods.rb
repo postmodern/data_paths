@@ -55,5 +55,16 @@ module StaticPaths
       StaticPaths.reject! { |dir| dir == path }
       return true
     end
+
+    #
+    # Unregisters all previously registered static directories.
+    #
+    # @return [true]
+    #
+    def unregister_static_paths
+      StaticPaths.reject! { |dir| self.static_paths.include?(dir) }
+      self.static_paths.clear
+      return true
+    end
   end
 end
