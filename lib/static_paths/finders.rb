@@ -33,7 +33,7 @@ module StaticPaths
     #   directory. Returns +nil+ if the given path could not be found
     #   in any static directory.
     #
-    def static_find(path)
+    def find_static_path(path)
       each_static_path(path) do |full_path|
         return full_path if File.exists?(full_path)
       end
