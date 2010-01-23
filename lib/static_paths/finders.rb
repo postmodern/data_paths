@@ -181,7 +181,7 @@ module StaticPaths
     # @return [Array<String>]
     #   The matching paths found within all static directories.
     #
-    def static_glob_all(pattern)
+    def static_glob(pattern)
       paths = []
 
       StaticPaths.paths.each do |path|

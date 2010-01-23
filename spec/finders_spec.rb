@@ -31,7 +31,7 @@ describe StaticPaths::Finders do
   end
 
   it "should find all paths matching a pattern" do
-    @example.static_glob_all('*/*.txt').should == [
+    @example.static_glob('*/*.txt').should == [
       File.join(Helpers::STATIC_DIRS[0],'dir','two.txt'),
       File.join(Helpers::STATIC_DIRS[1],'dir','two.txt')
     ]
