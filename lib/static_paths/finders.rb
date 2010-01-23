@@ -101,28 +101,6 @@ module StaticPaths
     end
 
     #
-    #
-    # Finds all occurrences of a given file path, within all static
-    # directories.
-    #
-    # @param [String] path
-    #   The file path to search for.
-    #
-    # @return [Array<String>]
-    #   The occurrences of the given file path within all static
-    #   directories.
-    #
-    def all_static_files(path)
-      paths = []
-
-      each_static_path(path) do |full_path|
-        paths << full_path if File.file?(full_path)
-      end
-
-      return paths
-    end
-
-    #
     # Finds all occurrences of a given file path, within all static
     # directories.
     #
@@ -140,28 +118,25 @@ module StaticPaths
     #   directories.
     #
     def each_static_file(path,&block)
-      all_static_files(path).each(&block)
+      each_static_path(path) do |full_path|
+        block.call(full_path) if File.file?(full_path)
+      end
     end
 
     #
-    # Finds all occurrences of a given directory path, within all static
+    #
+    # Finds all occurrences of a given file path, within all static
     # directories.
     #
     # @param [String] path
-    #   The directory path to search for.
+    #   The file path to search for.
     #
     # @return [Array<String>]
-    #   The occurrences of the given directory path within all static
+    #   The occurrences of the given file path within all static
     #   directories.
     #
-    def all_static_dirs(path)
-      paths = []
-
-      each_static_path(path) do |full_path|
-        paths << full_path if File.directory?(full_path)
-      end
-
-      return paths
+    def all_static_files(path)
+      Enumerable::Enumerator.new(self,:each_static_file).to_a
     end
 
     #
@@ -182,7 +157,24 @@ module StaticPaths
     #   directories.
     #
     def each_static_dir(path,&block)
-      all_static_dirs(path).each(&block)
+      each_static_path(path) do |full_path|
+        block.call(full_path) if File.directory?(full_path)
+      end
+    end
+
+    #
+    # Finds all occurrences of a given directory path, within all static
+    # directories.
+    #
+    # @param [String] path
+    #   The directory path to search for.
+    #
+    # @return [Array<String>]
+    #   The occurrences of the given directory path within all static
+    #   directories.
+    #
+    def all_static_dirs(path)
+      Enumerable::Enumerator.new(self,:each_static_dir).to_a
     end
 
     #
