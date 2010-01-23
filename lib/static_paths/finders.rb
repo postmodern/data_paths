@@ -111,7 +111,7 @@ module StaticPaths
     # @return [Array<String>]
     #   The occurrences of the given path within all static directories.
     #
-    def static_find_all(path)
+    def all_static_paths(path)
       paths = []
 
       each_static_path(path) do |full_path|
@@ -138,7 +138,7 @@ module StaticPaths
     #   The occurrences of the given path within all static directories.
     #
     def each_static_path(path,&block)
-      static_find_all(path).each(&block)
+      all_static_paths(path).each(&block)
     end
 
     #
