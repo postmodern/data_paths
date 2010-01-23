@@ -122,25 +122,6 @@ module StaticPaths
     end
 
     #
-    # Finds all occurrences of a given path, within all static
-    # directories.
-    #
-    # @param [String] path
-    #   The path to search for.
-    #
-    # @yield [static_path]
-    #   If a block is given, it will be passed every found path.
-    #
-    # @yieldparam [String] static_path
-    #   A path within a static directory.
-    #
-    # @return [Array<String>]
-    #   The occurrences of the given path within all static directories.
-    #
-    def each_static_path(path,&block)
-      all_static_paths(path).each(&block)
-    end
-
     #
     # Finds all occurrences of a given file path, within all static
     # directories.
