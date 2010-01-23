@@ -1,5 +1,17 @@
+require 'set'
+
 module StaticPaths
   module ClassMethods
+    #
+    # The registered static directories.
+    #
+    # @return [Set]
+    #   The directories registered so far.
+    #
+    def static_paths
+      @static_paths ||= Set[]
+    end
+
     #
     # Registers a path as a static directory.
     #
@@ -21,6 +33,8 @@ module StaticPaths
       unless File.directory?(path)
         raise(RuntimeError,"#{path.dump} must be a directory")
       end
+
+      self.static_paths << path
 
       StaticPaths.paths << path
       return path
