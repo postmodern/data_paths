@@ -36,11 +36,7 @@ module StaticPaths
     #   in any static directory.
     #
     def find_static_path(path)
-      each_static_path(path) do |full_path|
-        return full_path
-      end
-
-      return nil
+      Enumerable::Enumerator.new(self,:each_static_path,path).first
     end
 
     #
