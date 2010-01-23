@@ -93,13 +93,7 @@ module StaticPaths
     #   The occurrences of the given path within all static directories.
     #
     def all_static_paths(path)
-      paths = []
-
-      each_static_path(path) do |full_path|
-        paths << full_path
-      end
-
-      return paths
+      Enumerable::Enumerator.new(self,:each_static_path,path).to_a
     end
 
     #
