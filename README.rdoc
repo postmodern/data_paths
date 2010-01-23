@@ -18,6 +18,7 @@ within projects. StaticPaths provides the {StaticPaths.paths},
   {static_dir} method.
 * Provides helper methods in {StaticPaths::Helpers} for searching through the
   register <tt>static/</tt> directories.
+* Does not use global variables.
 
 == INSTALL:
 
