@@ -1,0 +1,15 @@
+History.rdoc
+Manifest.txt
+README.rdoc
+Rakefile
+lib/static_paths.rb
+lib/static_paths/static_paths.rb
+lib/static_paths/version.rb
+spec/spec_helper.rb
+spec/classes/static_class.rb
+spec/helpers/static.rb
+spec/helpers/static1/one.txt
+spec/helpers/static1/dir/two.txt
+spec/helpers/static2/dir/two.txt
+spec/finders_spec.rb
+spec/static_paths_spec.rb
