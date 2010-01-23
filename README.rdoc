@@ -15,7 +15,7 @@ multiple RubyGems, in much the same way RubyGems manages <tt>$LOAD_PATH</tt>.
 == FEATURES/PROBLEMS:
 
 * Allows projects to register static-resource directories using the
-  +static_dir+ class or instance method.
+  +register_static_dir+ class or instance method.
 * Provides helper methods in {StaticPaths::Finders} for searching through the
   registered static-resource directories.
 * Does not use global variables.
@@ -30,7 +30,7 @@ multiple RubyGems, in much the same way RubyGems manages <tt>$LOAD_PATH</tt>.
       include StaticPaths
     
       # define the static dir(s)
-      static_dir File.join(File.dirname(__FILE__),'..','..','static')
+      register_static_dir File.join(File.dirname(__FILE__),'..','..','static')
     end
 
 * List previously registered static-resource directories:
@@ -45,7 +45,7 @@ multiple RubyGems, in much the same way RubyGems manages <tt>$LOAD_PATH</tt>.
 
     # list static directories registered in an object
     proj = MyProject.new
-    proj.static_dir File.join('path','to','static')
+    proj.register_static_dir File.join('path','to','static')
 
     proj.static_paths
     # => #<Set: {...}>

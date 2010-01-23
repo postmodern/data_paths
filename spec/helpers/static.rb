@@ -8,5 +8,5 @@ module Helpers
     File.expand_path(File.join(File.dirname(__FILE__),'static2')),
   ]
 
-  STATIC_DIRS.each { |dir| static_dir dir }
+  STATIC_DIRS.each { |dir| register_static_dir dir }
 end
