@@ -15,7 +15,7 @@ within projects. StaticPaths provides the {StaticPaths.paths} and
 * Manages paths to <tt>static/</tt> directories, much like RubyGems and
   <tt>$LOAD_PATH</tt> manages <tt>lib/</tt> directories.
 * Allows projects to register <tt>static/</tt> directories using the
-  {static_dir} method.
+  +static_dir+ method.
 * Provides helper methods in {StaticPaths::Finders} for searching through the
   register <tt>static/</tt> directories.
 * Does not use global variables.
