@@ -39,5 +39,21 @@ module StaticPaths
       StaticPaths.paths << path
       return path
     end
+
+    #
+    # Unregisters any matching static directories.
+    #
+    # @param [String] path
+    #   The path to unregistere.
+    #
+    # @return [true]
+    #
+    def unregister_static_dir(path)
+      path = File.expand_path(path)
+
+      self.static_paths.reject! { |dir| dir == path }
+      StaticPaths.reject! { |dir| dir == path }
+      return true
+    end
   end
 end
