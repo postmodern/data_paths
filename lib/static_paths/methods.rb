@@ -52,7 +52,7 @@ module StaticPaths
       path = File.expand_path(path)
 
       self.static_paths.reject! { |dir| dir == path }
-      StaticPaths.reject! { |dir| dir == path }
+      StaticPaths.paths.reject! { |dir| dir == path }
       return true
     end
 
@@ -62,7 +62,7 @@ module StaticPaths
     # @return [true]
     #
     def unregister_static_dirs!
-      StaticPaths.reject! { |dir| self.static_paths.include?(dir) }
+      StaticPaths.paths.reject! { |dir| self.static_paths.include?(dir) }
       self.static_paths.clear
       return true
     end
