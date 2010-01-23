@@ -152,7 +152,7 @@ module StaticPaths
     #   The occurrences of the given file path within all static
     #   directories.
     #
-    def find_static_files(path)
+    def all_static_files(path)
       paths = []
 
       each_static_path(path) do |full_path|
@@ -180,7 +180,7 @@ module StaticPaths
     #   directories.
     #
     def each_static_file(path,&block)
-      find_static_files(path).each(&block)
+      all_static_files(path).each(&block)
     end
 
     #
@@ -194,7 +194,7 @@ module StaticPaths
     #   The occurrences of the given directory path within all static
     #   directories.
     #
-    def find_static_dirs(path)
+    def all_static_dirs(path)
       paths = []
 
       each_static_path(path) do |full_path|
@@ -222,7 +222,7 @@ module StaticPaths
     #   directories.
     #
     def each_static_dir(path,&block)
-      find_static_dirs(path).each(&block)
+      all_static_dirs(path).each(&block)
     end
 
     #
