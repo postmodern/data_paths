@@ -16,7 +16,7 @@ module StaticPaths
     # @yieldparam [String] potential_path
     #   A potentially valid path.
     #
-    def static_paths(path,&block)
+    def each_static_path(path,&block)
       StaticPaths.paths.each do |dir|
         block.call(File.join(dir,path))
       end
@@ -34,7 +34,7 @@ module StaticPaths
     #   in any static directory.
     #
     def static_find(path)
-      static_paths(path) do |full_path|
+      each_static_path(path) do |full_path|
         return full_path if File.exists?(full_path)
       end
 
@@ -53,7 +53,7 @@ module StaticPaths
     #   in any static directory.
     #
     def find_static_file(path)
-      static_paths(path) do |full_path|
+      each_static_path(path) do |full_path|
         return full_path if File.file?(full_path)
       end
 
@@ -73,7 +73,7 @@ module StaticPaths
     #   found in any static directory.
     #
     def find_static_dir(path)
-      static_paths(path) do |full_path|
+      each_static_path(path) do |full_path|
         return full_path if File.directory?(full_path)
       end
 
@@ -92,7 +92,7 @@ module StaticPaths
     #   directory.
     #
     def static_glob(pattern)
-      static_paths(pattern) do |full_path|
+      each_static_path(pattern) do |full_path|
         paths = Dir[full_path]
 
         return paths unless paths.empty?
@@ -114,7 +114,7 @@ module StaticPaths
     def static_find_all(path)
       paths = []
 
-      static_paths(path) do |full_path|
+      each_static_path(path) do |full_path|
         paths << full_path if File.exists?(full_path)
       end
 
@@ -155,7 +155,7 @@ module StaticPaths
     def find_static_files(path)
       paths = []
 
-      static_paths(path) do |full_path|
+      each_static_path(path) do |full_path|
         paths << full_path if File.file?(full_path)
       end
 
@@ -197,7 +197,7 @@ module StaticPaths
     def find_static_dirs(path)
       paths = []
 
-      static_paths(path) do |full_path|
+      each_static_path(path) do |full_path|
         paths << full_path if File.directory?(full_path)
       end
 
@@ -238,7 +238,7 @@ module StaticPaths
     def static_glob_all(pattern)
       paths = []
 
-      static_paths(pattern) do |full_path|
+      each_static_path(pattern) do |full_path|
         paths += Dir[full_path]
       end
 
