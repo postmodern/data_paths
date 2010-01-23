@@ -3,22 +3,24 @@ require 'static_paths/static_paths'
 module StaticPaths
   module Finders
     #
-    # Passes all possible static paths for the specified path,
+    # Passes all existing static paths for the specified path,
     # within the static directories, to the given block.
     #
     # @param [String] path
-    #   The path to search for within all static directories.
+    #   The path to search for in all static directories.
     #
     # @yield [potential_path]
-    #   The given block will be passed every possible combination of the
+    #   The given block will be passed every existing combination of the
     #   given path and the static directories.
     #
     # @yieldparam [String] potential_path
-    #   A potentially valid path.
+    #   An existing static path.
     #
     def each_static_path(path,&block)
       StaticPaths.paths.each do |dir|
-        block.call(File.join(dir,path))
+        full_path = File.join(dir,path)
+
+        block.call(full_path) if File.exists?(full_path)
       end
     end
 
@@ -35,7 +37,7 @@ module StaticPaths
     #
     def find_static_path(path)
       each_static_path(path) do |full_path|
-        return full_path if File.exists?(full_path)
+        return full_path
       end
 
       return nil
@@ -94,7 +96,7 @@ module StaticPaths
       paths = []
 
       each_static_path(path) do |full_path|
-        paths << full_path if File.exists?(full_path)
+        paths << full_path
       end
 
       return paths
@@ -136,7 +138,7 @@ module StaticPaths
     #   directories.
     #
     def all_static_files(path)
-      Enumerable::Enumerator.new(self,:each_static_file).to_a
+      Enumerable::Enumerator.new(self,:each_static_file,path).to_a
     end
 
     #
@@ -174,7 +176,7 @@ module StaticPaths
     #   directories.
     #
     def all_static_dirs(path)
-      Enumerable::Enumerator.new(self,:each_static_dir).to_a
+      Enumerable::Enumerator.new(self,:each_static_dir,path).to_a
     end
 
     #
