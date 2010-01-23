@@ -61,7 +61,7 @@ module StaticPaths
     #
     # @return [true]
     #
-    def unregister_static_paths
+    def unregister_static_dirs!
       StaticPaths.reject! { |dir| self.static_paths.include?(dir) }
       self.static_paths.clear
       return true
