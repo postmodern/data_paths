@@ -43,6 +43,13 @@ within projects. StaticPaths provides the {StaticPaths.paths},
     MyProject.static_paths
     # => #<Set: {...}>
 
+    # list static directories registered in an object
+    proj = MyProject.new
+    proj.static_dir File.join('path','to','static')
+
+    proj.static_paths
+    # => #<Set: {...}>
+
 * Using {StaticPaths::Finders} to access content from within the
   <tt>static/</tt> directories:
 
