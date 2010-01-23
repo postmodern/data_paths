@@ -48,7 +48,7 @@ module StaticPaths
     #
     # @return [true]
     #
-    def unregister_static_dir(path)
+    def unregister_static_dir!(path)
       path = File.expand_path(path)
 
       self.static_paths.reject! { |dir| dir == path }
