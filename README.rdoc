@@ -15,10 +15,13 @@ multiple RubyGems, in much the same way RubyGems manages the paths of
 
 == FEATURES/PROBLEMS:
 
-* Allows projects to register static-content directories using the
+* Allows libraries to register static-content directories using the
   +register_static_dir+ class or instance method.
-* Provides helper methods in {StaticPaths::Finders} for searching through the
-  registered static-content directories.
+* Allows libraries to unregister a single path using
+  +unregister_static_dir+ or all paths registered by that library with
+  +unregister_static_dirs+.
+* Provides helper methods in {StaticPaths::Finders} for searching through
+  the registered static-content directories.
 * Does not use global variables.
 
 == EXAMPLES:
