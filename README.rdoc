@@ -30,7 +30,7 @@ multiple RubyGems, in much the same way RubyGems manages the paths of
 
     require 'static_paths'
     
-    module MyProject
+    module MyLibrary
       include StaticPaths
     
       # define the static dir(s)
@@ -43,21 +43,21 @@ multiple RubyGems, in much the same way RubyGems manages the paths of
     StaticPaths.paths
     # => #<Set: {...}>
 
-    # the static directories registeed in MyProject
-    MyProject.static_paths
+    # the static directories registeed in MyLibrary
+    MyLibrary.static_paths
     # => #<Set: {...}>
 
     # list static directories registered in an object
-    proj = MyProject.new
-    proj.register_static_dir File.join('path','to','static')
+    lib = MyLibrary.new
+    lib.register_static_dir File.join('path','to','static')
 
-    proj.static_paths
+    lib.static_paths
     # => #<Set: {...}>
 
 * Using {StaticPaths::Finders} to access content from within the
   static-content directories:
 
-    module MyProject
+    module MyLibrary
       class UsesContent
     
         include StaticPaths::Finders
@@ -67,7 +67,7 @@ multiple RubyGems, in much the same way RubyGems manages the paths of
         end
 
         def file_dirs
-          all_static_dirs('files')
+          all_static_dirs('extra')
         end
     
       end
