@@ -12,7 +12,7 @@ shared_examples_for "Methods" do
 
   it "should list static directories" do
     Helpers::STATIC_DIRS.each do |dir|
-      @context.static_paths.include?(dir).should == true
+      @context.static_paths.should include(dir)
     end
   end
 
