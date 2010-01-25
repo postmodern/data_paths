@@ -6,23 +6,23 @@
 
 == DESCRIPTION:
 
-StaticPaths is a library to manage the paths to directories containing
-static resources within multiple projects.
+StaticPaths is a library to manage the paths of directories containing
+static-content within multiple projects.
 
 For example, StaticPaths can manage the <tt>static/</tt> directories of
 multiple RubyGems, in much the same way RubyGems manages <tt>$LOAD_PATH</tt>.
 
 == FEATURES/PROBLEMS:
 
-* Allows projects to register static-resource directories using the
+* Allows projects to register static-content directories using the
   +register_static_dir+ class or instance method.
 * Provides helper methods in {StaticPaths::Finders} for searching through the
-  registered static-resource directories.
+  registered static-content directories.
 * Does not use global variables.
 
 == EXAMPLES:
 
-* Register a directory containing static resources:
+* Register a directory containing static-content:
 
     require 'static_paths'
     
@@ -33,7 +33,7 @@ multiple RubyGems, in much the same way RubyGems manages <tt>$LOAD_PATH</tt>.
       register_static_dir File.join(File.dirname(__FILE__),'..','..','static')
     end
 
-* List previously registered static-resource directories:
+* List previously registered static-content directories:
 
     # all static directories
     StaticPaths.paths
@@ -51,7 +51,7 @@ multiple RubyGems, in much the same way RubyGems manages <tt>$LOAD_PATH</tt>.
     # => #<Set: {...}>
 
 * Using {StaticPaths::Finders} to access content from within the
-  static-resource directories:
+  static-content directories:
 
     module MyProject
       class UsesContent
