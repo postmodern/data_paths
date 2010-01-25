@@ -13,7 +13,7 @@ For example, StaticPaths can manage the <tt>static/</tt> directories of
 multiple RubyGems, in much the same way RubyGems manages the paths of
 <tt>lib/</tt> directories using <tt>$LOAD_PATH</tt>.
 
-== FEATURES/PROBLEMS:
+== FEATURES:
 
 * Allows libraries to register static-content directories using the
   +register_static_dir+ class or instance method.
