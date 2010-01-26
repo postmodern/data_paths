@@ -3,7 +3,7 @@ require 'set'
 module StaticPaths
   module Methods
     #
-    # The registered static directories.
+    # The directories registered within a specific module or class.
     #
     # @return [Set]
     #   The directories registered so far.
