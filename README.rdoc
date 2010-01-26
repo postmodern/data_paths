@@ -1,5 +1,6 @@
 = static_paths
 
+* http://static-paths.rubyforge.org/
 * http://github.com/postmodern/static_paths
 * http://github.com/postmodern/static_paths/issues
 * Postmodern (postmodern.mod3 at gmail.com)
