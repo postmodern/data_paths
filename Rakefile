@@ -7,6 +7,7 @@ require 'hoe/signing'
 Hoe.plugin :yard
 
 Hoe.spec('static_paths') do
+  self.rubyforge_name = 'static-paths'
   self.developer('Postmodern', 'postmodern.mod3@gmail.com')
 
   self.rspec_options += ['--colour', '--format', 'specdoc']
