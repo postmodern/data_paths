@@ -6,10 +6,10 @@
 
 == DESCRIPTION:
 
-StaticPaths is a library to manage the paths of directories containing
+static_paths is a library to manage the paths of directories containing
 static-content within multiple projects.
 
-For example, StaticPaths can manage the <tt>static/</tt> directories of
+For example, static_paths can manage the <tt>static/</tt> directories of
 multiple RubyGems, in much the same way RubyGems manages the paths of
 <tt>lib/</tt> directories using <tt>$LOAD_PATH</tt>.
 
