@@ -34,7 +34,7 @@ module StaticPaths
     #
     # @return [String, nil]
     #   Returns the first valid match for the given path within a static
-    #   directory. Returns +nil+ if the given path could not be found
+    #   directory. Returns `nil` if the given path could not be found
     #   in any static directory.
     #
     def find_static_path(path)
@@ -49,7 +49,7 @@ module StaticPaths
     #
     # @return [String, nil]
     #   Returns the first valid file at the given path within a static
-    #   directory. Returns +nil+ if the given path could not be found
+    #   directory. Returns `nil` if the given path could not be found
     #   in any static directory.
     #
     def find_static_file(path)
@@ -69,7 +69,7 @@ module StaticPaths
     #
     # @return [String, nil]
     #   Returns the first valid directory at the given path within a
-    #   static directory. Returns +nil+ if the given path could not be
+    #   static directory. Returns `nil` if the given path could not be
     #   found in any static directory.
     #
     def find_static_dir(path)

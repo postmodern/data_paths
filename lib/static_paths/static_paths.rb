@@ -10,7 +10,7 @@ module StaticPaths
   end
 
   #
-  # The registered <tt>static/</tt> directories.
+  # The registered `static/` directories.
   #
   # @return [Set]
   #   The directories which contain static content.

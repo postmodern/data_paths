@@ -1,6 +1,6 @@
-History.rdoc
+History.md
 Manifest.txt
-README.rdoc
+README.md
 Rakefile
 lib/static_paths.rb
 lib/static_paths/finders.rb
