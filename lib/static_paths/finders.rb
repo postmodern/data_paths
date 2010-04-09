@@ -1,5 +1,7 @@
 require 'static_paths/static_paths'
 
+require 'enumerator'
+
 module StaticPaths
   module Finders
     include Enumerable
