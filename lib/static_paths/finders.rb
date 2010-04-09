@@ -40,7 +40,7 @@ module StaticPaths
     #   in any static directory.
     #
     def find_static_path(path)
-      Enumerator.new(self,:each_static_path,path).first
+      enum_for(:each_static_path,path).first
     end
 
     #
@@ -93,7 +93,7 @@ module StaticPaths
     #   The occurrences of the given path within all static directories.
     #
     def all_static_paths(path)
-      Enumerator.new(self,:each_static_path,path).to_a
+      enum_for(:each_static_path,path).to_a
     end
 
     #
@@ -132,7 +132,7 @@ module StaticPaths
     #   directories.
     #
     def all_static_files(path)
-      Enumerator.new(self,:each_static_file,path).to_a
+      enum_for(:each_static_file,path).to_a
     end
 
     #
@@ -170,7 +170,7 @@ module StaticPaths
     #   directories.
     #
     def all_static_dirs(path)
-      Enumerator.new(self,:each_static_dir,path).to_a
+      enum_for(:each_static_dir,path).to_a
     end
 
     #
