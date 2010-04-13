@@ -1,8 +1,8 @@
-require 'static_paths/methods'
+require 'data_paths/methods'
 
 require 'set'
 
-module StaticPaths
+module DataPaths
   include Methods
 
   def self.included(base)
@@ -10,12 +10,12 @@ module StaticPaths
   end
 
   #
-  # The registered `static/` directories.
+  # The registered `data/` directories.
   #
   # @return [Set]
   #   The directories which contain static content.
   #
-  def StaticPaths.paths
-    @@static_paths ||= Set[]
+  def DataPaths.paths
+    @@data_paths ||= Set[]
   end
 end

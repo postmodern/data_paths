@@ -1,27 +1,27 @@
-# static_paths
+# data_paths
 
-* http://static-paths.rubyforge.org/
-* http://github.com/postmodern/static_paths
-* http://github.com/postmodern/static_paths/issues
+* http://data_paths.rubyforge.org/
+* http://github.com/postmodern/data_paths
+* http://github.com/postmodern/data_paths/issues
 * Postmodern (postmodern.mod3 at gmail.com)
 
 ## DESCRIPTION:
 
-StaticPaths is a library to manage the paths of directories containing
+DataPaths is a library to manage the paths of directories containing
 static-content across multiple libraries.
 
-For example, StaticPaths can manage the `static/` directories of
+For example, DataPaths can manage the `data/` directories of
 multiple RubyGems, in much the same way RubyGems manages the paths of
 `lib/` directories using `$LOAD_PATH`.
 
 ## FEATURES:
 
 * Allows libraries to register static-content directories using the
-  `register_static_dir` class or instance method.
+  `register_data_dir` class or instance method.
 * Allows libraries to unregister a single path using
-  `unregister_static_dir` or all paths registered by that library with
-  `unregister_static_dirs`.
-* Provides helper methods in {StaticPaths::Finders} for searching through
+  `unregister_data_dir` or all paths registered by that library with
+  `unregister_data_dirs`.
+* Provides helper methods in {DataPaths::Finders} for searching through
   the registered static-content directories.
 * Does not use global variables.
 
@@ -29,46 +29,46 @@ multiple RubyGems, in much the same way RubyGems manages the paths of
 
 Register a directory containing static-content:
 
-    require 'static_paths'
+    require 'data_paths'
     
     module MyLibrary
-      include StaticPaths
+      include DataPaths
     
-      # define the static dir(s)
-      register_static_dir File.join(File.dirname(__FILE__),'..','..','static')
+      # define the data dir(s)
+      register_data_dir File.join(File.dirname(__FILE__),'..','..','data')
     end
 
 List previously registered static-content directories:
 
-    # all static directories
-    StaticPaths.paths
+    # all data directories
+    DataPaths.paths
     # => #<Set: {...}>
 
-    # the static directories registeed in MyLibrary
-    MyLibrary.static_paths
+    # the data directories registeed in MyLibrary
+    MyLibrary.data_paths
     # => #<Set: {...}>
 
-    # list static directories registered in an object
+    # list data directories registered in an object
     lib = MyLibrary.new
-    lib.register_static_dir File.join('path','to','static')
+    lib.register_data_dir File.join('path','to','data')
 
-    lib.static_paths
+    lib.data_paths
     # => #<Set: {...}>
 
-Using {StaticPaths::Finders} to access content from within the
+Using {DataPaths::Finders} to access content from within the
 static-content directories:
 
     module MyLibrary
       class UsesContent
     
-        include StaticPaths::Finders
+        include DataPaths::Finders
     
         def index
-          find_static_file('index.html')
+          find_data_file('index.html')
         end
 
         def file_dirs
-          all_static_dirs('extra')
+          all_data_dirs('extra')
         end
     
       end
@@ -76,7 +76,7 @@ static-content directories:
 
 ## INSTALL:
 
-    $ sudo gem install static_paths
+    $ sudo gem install data_paths
 
 ## LICENSE:
 

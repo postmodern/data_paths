@@ -1,39 +1,39 @@
-require 'static_paths/finders'
+require 'data_paths/finders'
 
 require 'spec_helper'
-require 'helpers/static'
+require 'helpers/data'
 
-describe StaticPaths::Finders do
+describe DataPaths::Finders do
   before(:all) do
-    @example = StaticClass.new
+    @example = DataClass.new
   end
 
   it "should find a file" do
-    @example.find_static_file('one.txt').should == File.join(Helpers::STATIC_DIRS[0],'one.txt')
+    @example.find_data_file('one.txt').should == File.join(Helpers::DATA_DIRS[0],'one.txt')
   end
 
   it "should find a directory" do
-    @example.find_static_dir('dir').should == File.join(Helpers::STATIC_DIRS[0],'dir')
+    @example.find_data_dir('dir').should == File.join(Helpers::DATA_DIRS[0],'dir')
   end
 
   it "should find all matching files" do
-    @example.all_static_files('dir/two.txt').should == [
-      File.join(Helpers::STATIC_DIRS[0],'dir','two.txt'),
-      File.join(Helpers::STATIC_DIRS[1],'dir','two.txt')
+    @example.all_data_files('dir/two.txt').should == [
+      File.join(Helpers::DATA_DIRS[0],'dir','two.txt'),
+      File.join(Helpers::DATA_DIRS[1],'dir','two.txt')
     ]
   end
 
   it "should find all matching directories" do
-    @example.all_static_dirs('dir').should == [
-      File.join(Helpers::STATIC_DIRS[0],'dir'),
-      File.join(Helpers::STATIC_DIRS[1],'dir')
+    @example.all_data_dirs('dir').should == [
+      File.join(Helpers::DATA_DIRS[0],'dir'),
+      File.join(Helpers::DATA_DIRS[1],'dir')
     ]
   end
 
   it "should find all paths matching a pattern" do
-    @example.static_glob('*/*.txt').should == [
-      File.join(Helpers::STATIC_DIRS[0],'dir','two.txt'),
-      File.join(Helpers::STATIC_DIRS[1],'dir','two.txt')
+    @example.data_glob('*/*.txt').should == [
+      File.join(Helpers::DATA_DIRS[0],'dir','two.txt'),
+      File.join(Helpers::DATA_DIRS[1],'dir','two.txt')
     ]
   end
 end

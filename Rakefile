@@ -1,16 +1,16 @@
 require 'rubygems'
 require 'rake'
-require './lib/static_paths/version.rb'
+require './lib/data_paths/version.rb'
 
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = 'static_paths'
-    gem.version = StaticPaths::VERSION
-    gem.summary = %Q{StaticPaths is a library to manage the paths of directories containing static-content across multiple libraries.}
-    gem.description = %Q{StaticPaths is a library to manage the paths of directories containing static-content across multiple libraries. For example, StaticPaths can manage the `static/` directories of multiple RubyGems, in much the same way RubyGems manages the paths of `lib/` directories using `$LOAD_PATH`.}
+    gem.name = 'data_paths'
+    gem.version = DataPaths::VERSION
+    gem.summary = %Q{DataPaths is a library to manage the paths of directories containing static-content across multiple libraries.}
+    gem.description = %Q{DataPaths is a library to manage the paths of directories containing static-content across multiple libraries. For example, DataPaths can manage the `data/` directories of multiple RubyGems, in much the same way RubyGems manages the paths of `lib/` directories using `$LOAD_PATH`.}
     gem.email = 'postmodern.mod3@gmail.com'
-    gem.homepage = 'http://github.com/postmodern/static_paths'
+    gem.homepage = 'http://github.com/postmodern/data_paths'
     gem.authors = ['Postmodern']
     gem.add_development_dependency 'rspec', '>= 1.3.0'
     gem.add_development_dependency 'yard', '>= 0.5.3'

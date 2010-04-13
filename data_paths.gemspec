@@ -4,13 +4,13 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{static_paths}
+  s.name = %q{data_paths}
   s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Postmodern"]
-  s.date = %q{2010-02-15}
-  s.description = %q{StaticPaths is a library to manage the paths of directories containing static-content across multiple libraries. For example, StaticPaths can manage the `static/` directories of multiple RubyGems, in much the same way RubyGems manages the paths of `lib/` directories using `$LOAD_PATH`.}
+  s.date = %q{2010-05-12}
+  s.description = %q{DataPaths is a library to manage the paths of directories containing static-content across multiple libraries. For example, DataPaths can manage the `data/` directories of multiple RubyGems, in much the same way RubyGems manages the paths of `lib/` directories using `$LOAD_PATH`.}
   s.email = %q{postmodern.mod3@gmail.com}
   s.extra_rdoc_files = [
     "ChangeLog.md",
@@ -25,34 +25,35 @@ Gem::Specification.new do |s|
      "LICENSE.txt",
      "README.md",
      "Rakefile",
-     "lib/static_paths.rb",
-     "lib/static_paths/finders.rb",
-     "lib/static_paths/methods.rb",
-     "lib/static_paths/static_paths.rb",
-     "lib/static_paths/version.rb",
-     "spec/classes/static_class.rb",
+     "data_paths.gemspec",
+     "lib/data_paths.rb",
+     "lib/data_paths/data_paths.rb",
+     "lib/data_paths/finders.rb",
+     "lib/data_paths/methods.rb",
+     "lib/data_paths/version.rb",
+     "spec/classes/data_class.rb",
+     "spec/data_paths_spec.rb",
      "spec/finders_spec.rb",
-     "spec/helpers/static.rb",
-     "spec/helpers/static1/dir/two.txt",
-     "spec/helpers/static1/one.txt",
-     "spec/helpers/static2/dir/two.txt",
+     "spec/helpers/data.rb",
+     "spec/helpers/data1/dir/two.txt",
+     "spec/helpers/data1/one.txt",
+     "spec/helpers/data2/dir/two.txt",
      "spec/methods_examples.rb",
-     "spec/spec_helper.rb",
-     "spec/static_paths_spec.rb"
+     "spec/spec_helper.rb"
   ]
   s.has_rdoc = %q{yard}
-  s.homepage = %q{http://github.com/postmodern/static_paths}
+  s.homepage = %q{http://github.com/postmodern/data_paths}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.5}
-  s.summary = %q{StaticPaths is a library to manage the paths of directories containing static-content across multiple libraries.}
+  s.rubygems_version = %q{1.3.6}
+  s.summary = %q{DataPaths is a library to manage the paths of directories containing static-content across multiple libraries.}
   s.test_files = [
-    "spec/methods_examples.rb",
-     "spec/static_paths_spec.rb",
-     "spec/classes/static_class.rb",
+    "spec/finders_spec.rb",
+     "spec/methods_examples.rb",
      "spec/spec_helper.rb",
-     "spec/helpers/static.rb",
-     "spec/finders_spec.rb"
+     "spec/helpers/data.rb",
+     "spec/classes/data_class.rb",
+     "spec/data_paths_spec.rb"
   ]
 
   if s.respond_to? :specification_version then

@@ -1,13 +1,13 @@
-require 'static_paths/static_paths'
+require 'data_paths/data_paths'
 
 require 'spec_helper'
-require 'helpers/static'
-require 'classes/static_class'
+require 'helpers/data'
+require 'classes/data_class'
 require 'methods_examples'
 
-describe StaticPaths do
+describe DataPaths do
   describe "instance methods" do
-    include StaticPaths
+    include DataPaths
 
     before(:all) do
       @context = self
@@ -18,7 +18,7 @@ describe StaticPaths do
 
   describe "class methods" do
     before(:all) do
-      @context = StaticClass
+      @context = DataClass
     end
 
     it_should_behave_like "Methods"
