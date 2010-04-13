@@ -1,3 +1,7 @@
+### 0.2.1 / 2010-04-13
+
+* Minor bug-fix in {DataPaths::Methods#unregister_data_dirs!}.
+
 ### 0.2.0 / 2010-04-13
 
 * Renamed the static_paths gem to data_paths, since the `data/` directory
