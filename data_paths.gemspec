@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{data_paths}
-  s.version = "0.1.0"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Postmodern"]
-  s.date = %q{2010-05-12}
+  s.date = %q{2010-04-13}
   s.description = %q{DataPaths is a library to manage the paths of directories containing static-content across multiple libraries. For example, DataPaths can manage the `data/` directories of multiple RubyGems, in much the same way RubyGems manages the paths of `lib/` directories using `$LOAD_PATH`.}
   s.email = %q{postmodern.mod3@gmail.com}
   s.extra_rdoc_files = [
