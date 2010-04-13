@@ -62,7 +62,7 @@ module DataPaths
     # @return [true]
     #
     def unregister_data_dirs!
-      StaticPaths.paths.reject! { |dir| self.data_paths.include?(dir) }
+      DataPaths.paths.reject! { |dir| self.data_paths.include?(dir) }
       self.data_paths.clear
       return true
     end
