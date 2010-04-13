@@ -16,7 +16,7 @@ module DataPaths
     # Registers a path as a data directory.
     #
     # @param [String] path
-    #   The path to add to {StaticPaths.paths}.
+    #   The path to add to {DataPaths.paths}.
     #
     # @return [String]
     #   The fully qualified form of the specified path.
