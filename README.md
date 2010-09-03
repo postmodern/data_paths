@@ -1,11 +1,10 @@
 # data_paths
 
-* http://data_paths.rubyforge.org/
-* http://github.com/postmodern/data_paths
-* http://github.com/postmodern/data_paths/issues
+* [github.com/postmodern/data_paths](http://github.com/postmodern/data_paths)
+* [github.com/postmodern/data_paths/issues](http://github.com/postmodern/data_paths/issues)
 * Postmodern (postmodern.mod3 at gmail.com)
 
-## DESCRIPTION:
+## Description
 
 DataPaths is a library to manage the paths of directories containing
 static-content across multiple libraries.
@@ -14,7 +13,7 @@ For example, DataPaths can manage the `data/` directories of
 multiple RubyGems, in much the same way RubyGems manages the paths of
 `lib/` directories using `$LOAD_PATH`.
 
-## FEATURES:
+## Features
 
 * Allows libraries to register static-content directories using the
   `register_data_dir` class or instance method.
@@ -25,7 +24,7 @@ multiple RubyGems, in much the same way RubyGems manages the paths of
   the registered static-content directories.
 * Does not use global variables.
 
-## EXAMPLES:
+## Examples
 
 Register a directory containing static-content:
 
@@ -74,11 +73,11 @@ static-content directories:
       end
     end
 
-## INSTALL:
+## Install
 
     $ sudo gem install data_paths
 
-## LICENSE:
+## License
 
 See {file:LICENSE.txt} for license information.
 
