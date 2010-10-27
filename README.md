@@ -77,7 +77,9 @@ static-content directories:
 
     $ sudo gem install data_paths
 
-## License
+## Copyright
+
+Copyright (c) 2010 Hal Brodigan
 
 See {file:LICENSE.txt} for license information.
 
