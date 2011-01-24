@@ -44,7 +44,7 @@ module DataPaths
     # Unregisters any matching data directories.
     #
     # @param [String] path
-    #   The path to unregistere.
+    #   The path to unregister.
     #
     # @return [true]
     #
