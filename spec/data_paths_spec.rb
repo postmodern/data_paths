@@ -7,19 +7,13 @@ require 'methods_examples'
 
 describe DataPaths do
   describe "instance methods" do
-    include DataPaths
-
-    before(:all) do
-      @context = self
-    end
+    subject { Class.new { include DataPaths } }
 
     it_should_behave_like "Methods"
   end
 
   describe "class methods" do
-    before(:all) do
-      @context = DataClass
-    end
+    subject { DataClass }
 
     it_should_behave_like "Methods"
   end
