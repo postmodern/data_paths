@@ -34,25 +34,25 @@ Register a directory containing static-content:
       include DataPaths
     
       # define the data dir(s)
-      register_data_dir File.join(File.dirname(__FILE__),'..','..','data')
+      register_data_path File.join(File.dirname(__FILE__),'..','..','data')
     end
 
 List previously registered static-content directories:
 
     # all data directories
     DataPaths.paths
-    # => #<Set: {...}>
+    # => [...]
 
     # the data directories registeed in MyLibrary
     MyLibrary.data_paths
-    # => #<Set: {...}>
+    # => [...]
 
     # list data directories registered in an object
     lib = MyLibrary.new
-    lib.register_data_dir File.join('path','to','data')
+    lib.register_data_path File.join('path','to','data')
 
     lib.data_paths
-    # => #<Set: {...}>
+    # => [...]
 
 Using {DataPaths::Finders} to access content from within the
 static-content directories:
