@@ -105,13 +105,14 @@ module DataPaths
     # @yieldparam [String] data_file
     #   The path of a file within a data directory.
     #
-    # @return [Array<String>]
-    #   The occurrences of the given file path within all data
-    #   directories.
+    # @return [Enumerator]
+    #   If no block is given, an Enumerator object will be returned.
     #
     def each_data_file(path)
+      return enum_for(:each_data_file,path) unless block_given?
+
       each_data_path(path) do |full_path|
-        block.call(full_path) if File.file?(full_path)
+        yield(full_path) if File.file?(full_path)
       end
     end
 
@@ -144,13 +145,14 @@ module DataPaths
     # @yieldparam [String] data_dir
     #   The path of a directory within a data directory.
     #
-    # @return [Array<String>]
-    #   The occurrences of the given directory path within all data
-    #   directories.
+    # @return [Enumerator]
+    #   If no block is given, an Enumerator object will be returned.
     #
-    def each_data_dir(path,&block)
+    def each_data_dir(path)
+      return enum_for(:each_data_dir,path) unless block_given?
+
       each_data_path(path) do |full_path|
-        block.call(full_path) if File.directory?(full_path)
+        yield(full_path) if File.directory?(full_path)
       end
     end
 
