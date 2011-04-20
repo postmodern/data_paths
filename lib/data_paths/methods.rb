@@ -3,7 +3,7 @@ module DataPaths
     #
     # The directories registered within a specific module or class.
     #
-    # @return [Set]
+    # @return [Array<String>]
     #   The directories registered so far.
     #
     def data_paths
@@ -25,11 +25,23 @@ module DataPaths
     # @raise [RuntimeError]
     #   The specified path is not a directory.
     #
-    def register_data_dir(path)
+    # @since 0.3.0
+    #
+    def register_data_path(path)
       DataPaths.register(path)
 
       data_paths << path unless data_paths.include?(path)
       return path
+    end
+
+    #
+    # @deprecated Will be removed 1.0.0, please use {#register_data_path}
+    #   instead.
+    #
+    def register_data_dir(path)
+      STDERR.puts "DEPRECATED: Please use register_data_path instead."
+
+      register_data_path(path)
     end
 
     #
@@ -41,7 +53,9 @@ module DataPaths
     # @return [String]
     #   The unregistered data path.
     #
-    def unregister_data_dir!(path)
+    # @since 0.3.0
+    #
+    def unregister_data_path(path)
       path = File.expand_path(path)
 
       self.data_paths.delete(path)
@@ -49,14 +63,37 @@ module DataPaths
     end
 
     #
+    # @deprecated Will be removed 1.0.0, please use {#unregister_data_path}
+    #   instead.
+    #
+    def unregister_data_dir!(path)
+      STDERR.puts "DEPRECATED: Please use unregister_data_path instead."
+
+      unregister_data_path(path)
+    end
+
+    #
     # Unregisters all previously registered data directories.
     #
     # @return [true]
+    #   Specifies all data paths were successfully unregistered.
     #
-    def unregister_data_dirs!
+    # @since 0.3.0
+    #
+    def unregister_data_paths
       data_paths.each { |path| DataPaths.unregister!(path) }
       data_paths.clear
       return true
+    end
+
+    #
+    # @deprecated Will be removed 1.0.0, please use {#unregister_data_paths}
+    #   instead.
+    #
+    def unregister_data_dirs!
+      STDERR.puts "DEPRECATED: Please use unregister_data_paths instead."
+
+      unregister_data_paths
     end
   end
 end
