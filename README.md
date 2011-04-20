@@ -1,8 +1,9 @@
 # data_paths
 
-* [github.com/postmodern/data_paths](http://github.com/postmodern/data_paths)
-* [github.com/postmodern/data_paths/issues](http://github.com/postmodern/data_paths/issues)
-* Postmodern (postmodern.mod3 at gmail.com)
+* [Source](http://github.com/postmodern/data_paths)
+* [Issues](http://github.com/postmodern/data_paths/issues)
+* [Documentation](http://rubydoc.info/gems/data_paths/frames)
+* [Email](mailto:postmodern.mod3 at gmail.com)
 
 ## Description
 
