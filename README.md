@@ -16,10 +16,10 @@ multiple RubyGems, in much the same way RubyGems manages the paths of
 ## Features
 
 * Allows libraries to register static-content directories using the
-  `register_data_dir` class or instance method.
+  `register_data_path` class or instance method.
 * Allows libraries to unregister a single path using
-  `unregister_data_dir` or all paths registered by that library with
-  `unregister_data_dirs`.
+  `unregister_data_path` or all paths registered by that library with
+  `unregister_data_paths`.
 * Provides helper methods in {DataPaths::Finders} for searching through
   the registered static-content directories.
 * Does not use global variables.
