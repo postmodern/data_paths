@@ -178,17 +178,34 @@ module DataPaths
     # @param [String] pattern
     #   The path glob pattern to search with.
     #
-    # @return [Array<String>]
-    #   The matching paths found within all data directories.
+    # @yield [path]
+    #   If a block is given, it will be passed every matching path.
     #
-    def data_glob(pattern)
-      paths = []
+    # @yieldparam [String] path
+    #   The path of a matching file within a data directory.
+    #
+    # @return [Array<String>]
+    #   If no block is given, the matching paths found within all data
+    #   directories will be returned.
+    #
+    # @since 0.3.0
+    #
+    def glob_data_paths(pattern,&block)
+      return enum_for(:glob_data_paths,pattern).to_a unless block_given?
 
       DataPaths.paths.each do |path|
-        paths += Dir[File.join(path,pattern)]
+        Dir.glob(File.join(path,pattern),&block)
       end
+    end
 
-      return paths
+    #
+    # @deprecated
+    #   Will be removed in 1.0.0, please use {#glob_data_paths} instead.
+    #
+    def data_glob(pattern)
+      STDERR.puts "DEPRECATED: please use glob_data_paths instead."
+
+      glob_data_paths(pattern)
     end
   end
 end
