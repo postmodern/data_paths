@@ -1,7 +1,5 @@
 require 'data_paths/data_paths'
 
-require 'enumerator'
-
 module DataPaths
   module Finders
     include Enumerable
