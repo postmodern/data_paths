@@ -60,11 +60,7 @@ module DataPaths
     #   in any data directory.
     #
     def find_data_file(path)
-      each_data_path(path) do |full_path|
-        return full_path if File.file?(full_path)
-      end
-
-      return nil
+      each_data_path(path).find { |full_path| File.file?(full_path) }
     end
 
     #
@@ -80,11 +76,7 @@ module DataPaths
     #   found in any data directory.
     #
     def find_data_dir(path)
-      each_data_path(path) do |full_path|
-        return full_path if File.directory?(full_path)
-      end
-
-      return nil
+      each_data_path(path).find { |full_path| File.directory?(full_path) }
     end
 
     #
@@ -97,7 +89,7 @@ module DataPaths
     #   The occurrences of the given path within all data directories.
     #
     def all_data_paths(path)
-      enum_for(:each_data_path,path).to_a
+      each_data_path(path).to_a
     end
 
     #
@@ -117,7 +109,7 @@ module DataPaths
     #   The occurrences of the given file path within all data
     #   directories.
     #
-    def each_data_file(path,&block)
+    def each_data_file(path)
       each_data_path(path) do |full_path|
         block.call(full_path) if File.file?(full_path)
       end
@@ -136,7 +128,7 @@ module DataPaths
     #   directories.
     #
     def all_data_files(path)
-      enum_for(:each_data_file,path).to_a
+      each_data_file(path).to_a
     end
 
     #
@@ -174,7 +166,7 @@ module DataPaths
     #   directories.
     #
     def all_data_dirs(path)
-      enum_for(:each_data_dir,path).to_a
+      each_data_dir(path).to_a
     end
 
     #
