@@ -8,5 +8,5 @@ module Helpers
     File.expand_path(File.join(File.dirname(__FILE__),'data2')),
   ]
 
-  DATA_DIRS.each { |dir| register_data_dir dir }
+  DATA_DIRS.each { |path| register_data_path(path) }
 end

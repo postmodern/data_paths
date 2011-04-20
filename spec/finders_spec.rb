@@ -34,7 +34,7 @@ describe DataPaths::Finders do
   end
 
   it "should find all paths matching a pattern" do
-    subject.data_glob('*/*.txt').should == [
+    subject.glob_data_paths('*/*.txt').should == [
       File.join(Helpers::DATA_DIRS[0],'dir','two.txt'),
       File.join(Helpers::DATA_DIRS[1],'dir','two.txt')
     ]
