@@ -79,7 +79,6 @@ static-content directories:
 
 ## Copyright
 
-Copyright (c) 2010 Hal Brodigan
+Copyright (c) 2011 Hal Brodigan
 
 See {file:LICENSE.txt} for license information.
-
