@@ -14,7 +14,7 @@ module DataPaths
   #   The directories which contain static content.
   #
   def DataPaths.paths
-    @@data_paths ||= []
+    @data_paths ||= []
   end
 
   def DataPaths.register(path)
