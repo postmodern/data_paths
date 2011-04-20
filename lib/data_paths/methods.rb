@@ -35,8 +35,8 @@ module DataPaths
     end
 
     #
-    # @deprecated Will be removed 1.0.0, please use {#register_data_path}
-    #   instead.
+    # @deprecated
+    #   Will be removed 1.0.0, please use {#register_data_path} instead.
     #
     def register_data_dir(path)
       STDERR.puts "DEPRECATED: Please use register_data_path instead."
@@ -63,8 +63,8 @@ module DataPaths
     end
 
     #
-    # @deprecated Will be removed 1.0.0, please use {#unregister_data_path}
-    #   instead.
+    # @deprecated
+    #   Will be removed 1.0.0, please use {#unregister_data_path} instead.
     #
     def unregister_data_dir!(path)
       STDERR.puts "DEPRECATED: Please use unregister_data_path instead."
@@ -87,8 +87,8 @@ module DataPaths
     end
 
     #
-    # @deprecated Will be removed 1.0.0, please use {#unregister_data_paths}
-    #   instead.
+    # @deprecated
+    #   Will be removed 1.0.0, please use {#unregister_data_paths} instead.
     #
     def unregister_data_dirs!
       STDERR.puts "DEPRECATED: Please use unregister_data_paths instead."
