@@ -1,5 +1,3 @@
-require 'set'
-
 module DataPaths
   module Methods
     #
@@ -9,7 +7,7 @@ module DataPaths
     #   The directories registered so far.
     #
     def data_paths
-      @data_paths ||= Set[]
+      @data_paths ||= []
     end
 
     #
@@ -28,15 +26,9 @@ module DataPaths
     #   The specified path is not a directory.
     #
     def register_data_dir(path)
-      path = File.expand_path(path)
+      DataPaths.register(path)
 
-      unless File.directory?(path)
-        raise(RuntimeError,"#{path.dump} must be a directory")
-      end
-
-      self.data_paths << path
-
-      DataPaths.paths << path
+      data_paths << path unless data_paths.include?(path)
       return path
     end
 
@@ -46,14 +38,14 @@ module DataPaths
     # @param [String] path
     #   The path to unregister.
     #
-    # @return [true]
+    # @return [String]
+    #   The unregistered data path.
     #
     def unregister_data_dir!(path)
       path = File.expand_path(path)
 
-      self.data_paths.reject! { |dir| dir == path }
-      DataPaths.paths.reject! { |dir| dir == path }
-      return true
+      self.data_paths.delete(path)
+      return DataPaths.unregister!(path)
     end
 
     #
@@ -62,8 +54,8 @@ module DataPaths
     # @return [true]
     #
     def unregister_data_dirs!
-      DataPaths.paths.reject! { |dir| self.data_paths.include?(dir) }
-      self.data_paths.clear
+      data_paths.each { |path| DataPaths.unregister!(path) }
+      data_paths.clear
       return true
     end
   end
