@@ -47,7 +47,7 @@ module DataPaths
   #
   # @since 0.3.0
   #
-  def DataPaths.unregister!(path)
+  def DataPaths.unregister(path)
     paths.delete(File.expand_path(path))
   end
 end
