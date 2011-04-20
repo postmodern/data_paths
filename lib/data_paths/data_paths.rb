@@ -10,7 +10,7 @@ module DataPaths
   #
   # The registered `data/` directories.
   #
-  # @return [Set]
+  # @return [Array<String>]
   #   The directories which contain static content.
   #
   def DataPaths.paths
