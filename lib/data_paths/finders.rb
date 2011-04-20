@@ -20,11 +20,16 @@ module DataPaths
     # @yieldparam [String] potential_path
     #   An existing data path.
     #
-    def each_data_path(path,&block)
+    # @return [Enumerator]
+    #   If no block is given, an Enumerator object will be returned.
+    #
+    def each_data_path(path)
+      return enum_for(:each_data_path,path) unless block_given?
+
       DataPaths.paths.each do |dir|
         full_path = File.join(dir,path)
 
-        block.call(full_path) if File.exists?(full_path)
+        yield(full_path) if File.exists?(full_path)
       end
     end
 
@@ -40,7 +45,7 @@ module DataPaths
     #   in any data directory.
     #
     def find_data_path(path)
-      enum_for(:each_data_path,path).first
+      each_data_path(path).first
     end
 
     #
