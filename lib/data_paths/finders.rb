@@ -2,8 +2,6 @@ require 'data_paths/data_paths'
 
 module DataPaths
   module Finders
-    include Enumerable
-
     #
     # Passes all existing data paths for the specified path,
     # within the data directories, to the given block.
