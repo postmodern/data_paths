@@ -1,5 +1,7 @@
 require 'data_paths/data_paths'
 
+require 'yaml'
+
 module DataPaths
   module Finders
     #
@@ -60,6 +62,23 @@ module DataPaths
     end
 
     #
+    # Loads the YAML file at the given path, within any data directory.
+    #
+    # @param [String] path
+    #   The file path to search for.
+    #
+    # @return [Object]
+    #   The contents of the YAML file.
+    #
+    # @since 0.3.0
+    #
+    def load_yaml_file(path)
+      if (file = find_data_file(path))
+        YAML.load_file(file)
+      end
+    end
+
+    #
     # Searches for a directory at the given path, within any data
     # directory.
     #
@@ -110,6 +129,22 @@ module DataPaths
       each_data_path(path) do |full_path|
         yield(full_path) if File.file?(full_path)
       end
+    end
+
+    #
+    # Finds all occurrences of a given file path, within all data
+    # directories.
+    #
+    # @param [String] path
+    #   The file path to search for.
+    #
+    # @return [Array]
+    #   The loaded YAML files.
+    #
+    # @since 0.3.0
+    #
+    def load_yaml_files(path)
+      each_data_file.map { |file| YAML.load_file(file) }
     end
 
     #
