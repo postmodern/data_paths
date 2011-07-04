@@ -28,6 +28,8 @@ module DataPaths
     # @since 0.3.0
     #
     def register_data_path(path)
+      path = File.expand_path(path)
+
       DataPaths.register(path)
 
       data_paths << path unless data_paths.include?(path)
