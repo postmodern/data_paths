@@ -144,7 +144,7 @@ module DataPaths
     # @since 0.3.0
     #
     def load_yaml_files(path)
-      each_data_file.map { |file| YAML.load_file(file) }
+      each_data_file(path).map { |file| YAML.load_file(file) }
     end
 
     #
