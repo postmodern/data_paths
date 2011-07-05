@@ -76,7 +76,7 @@ static-content directories:
 
 ## Install
 
-    $ sudo gem install data_paths
+    $ gem install data_paths
 
 ## Copyright
 
