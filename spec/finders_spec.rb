@@ -39,4 +39,16 @@ describe DataPaths::Finders do
       File.join(Helpers::DATA_DIRS[1],'dir','two.txt')
     ]
   end
+
+  it "should load the first found YAML file" do
+    data = subject.load_yaml_file('data.yml')
+
+    data.should == {'one' => 1}
+  end
+
+  it "should load all matching YAML files" do
+    data = subject.load_yaml_files('data.yml')
+
+    data.should == [{'one' => 1}, {'two' => 2}]
+  end
 end
