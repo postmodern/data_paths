@@ -1,4 +1,4 @@
-### 0.3.0 / 2011-05-14
+### 0.3.0 / 2011-07-04
 
 * Added {DataPaths::Finders#load_yaml_file}.
 * Added {DataPaths::Finders#load_yaml_files}.
