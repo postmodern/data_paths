@@ -15,4 +15,4 @@ has_yard: true
 development_dependencies:
   rubygems-tasks: ~> 0.1
   rspec: ~> 2.4
-  yard: ~> 0.7.0
+  yard: ~> 0.7
