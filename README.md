@@ -80,6 +80,6 @@ static-content directories:
 
 ## Copyright
 
-Copyright (c) 2011 Hal Brodigan
+Copyright (c) 2011-2012 Hal Brodigan
 
 See {file:LICENSE.txt} for license information.
