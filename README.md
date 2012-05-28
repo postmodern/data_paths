@@ -1,7 +1,7 @@
 # data_paths
 
-* [Source](http://github.com/postmodern/data_paths)
-* [Issues](http://github.com/postmodern/data_paths/issues)
+* [Source](https://github.com/postmodern/data_paths)
+* [Issues](https://github.com/postmodern/data_paths/issues)
 * [Documentation](http://rubydoc.info/gems/data_paths/frames)
 * [Email](mailto:postmodern.mod3 at gmail.com)
 
